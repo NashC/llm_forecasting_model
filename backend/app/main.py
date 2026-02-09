@@ -50,10 +50,10 @@ def create_superuser():
         if not superuser:
             logger.info("Creating default superuser")
             superuser = User(
-                email="admin@example.com",
-                username="admin",
+                email=settings.SUPERUSER_EMAIL,
+                username=settings.SUPERUSER_USERNAME,
                 full_name="Admin User",
-                hashed_password=get_password_hash("admin"),
+                hashed_password=get_password_hash(settings.SUPERUSER_PASSWORD),
                 is_active=True,
                 is_superuser=True,
             )
