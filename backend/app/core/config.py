@@ -27,6 +27,11 @@ class Settings(BaseModel):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "30"))
     REFRESH_TOKEN_EXPIRE_DAYS: int = int(os.getenv("REFRESH_TOKEN_EXPIRE_DAYS", "7"))
 
+    # Superuser configuration
+    SUPERUSER_EMAIL: str = os.getenv("SUPERUSER_EMAIL", "admin@example.com")
+    SUPERUSER_USERNAME: str = os.getenv("SUPERUSER_USERNAME", "admin")
+    SUPERUSER_PASSWORD: str = os.getenv("SUPERUSER_PASSWORD", "changeme")
+
     # CORS configuration
     ALLOWED_ORIGINS: List[str] = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://localhost:8000").split(",")
 
